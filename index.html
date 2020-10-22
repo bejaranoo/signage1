@@ -59,7 +59,7 @@
       const elementSelector = document.getElementById('marquee');
 
       new RSSMarquee(feedUrl, elementSelector, {
-        speed: 20,
+        speed: 50,
         maxItems: 10
       });
     });
@@ -72,7 +72,7 @@
       window.setTimeout(
         function () {
           $('#marquee').show();
-          setInterval(function () { $('#marquee').toggle(); }, 64000);
+          setInterval(function () { $('#marquee').toggle(); }, 60000);
         }
         , 1000);
     });
