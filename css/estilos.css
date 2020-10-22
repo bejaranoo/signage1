@@ -1,0 +1,40 @@
+body {
+    background-color: gray;
+    margin: 0px;
+    padding: 0px;
+}
+
+#timedate {
+    font: small-caps lighter 4vw/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial,
+        sans-serif;
+    text-align: left;
+    width: 33%;
+    margin: 30px 50px;
+    color: #fff;
+    border-left: 3px solid #ed1f24;
+    border-radius: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 10vw;
+}
+
+.navbar {
+
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#marquee {
+    background-color: #ecf1eb;
+    letter-spacing: 0.2pt;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-weight: 700;
+    margin: 0 2vh 3vh 2vh;
+    font-size: 3vh;
+    padding: 1vh;
+    border-radius: 1.5vh;
+    font-family: 'Montserrat', sans-serif;
+}
