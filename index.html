@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/reloj.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/background.cycle.js"></script>
+  <!-- backgroundslideshow (https://www.jqueryscript.net/slideshow/Simple-jQuery-Background-Image-Slideshow-with-Fade-Transitions-Background-Cycle.html) -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("body").backgroundCycle({
+        imageUrls: [
+          'img/1.jpg',
+          'img/2.jpg',
+          'img/3.jpg',
+          'img/4.jpg',
+          'img/5.jpg',
+          'img/6.jpg',
+          'img/7.jpg',
+          'img/8.jpg'
+        ],
+        fadeSpeed: 3000,
+        duration: 10000,
+        backgroundSize: SCALING_MODE_COVER
+      });
+    });
+  </script>
+</head>
+
+<body onLoad="initClock()">
+  <!-- reloj (https://uicookies.com/html-clock/) -->
+  <div id="timedate">
+    <a id="d">1</a> de
+    <a id="mon">January</a>
+    <a id="y">0</a><br />
+    <a id="h">12</a> :
+    <a id="m">00</a>:
+    <a id="s">00</a>
+    <a id="mi">000</a>
+  </div>
+
+  <!-- scripts de marquesina (https://www.cssscript.com/rss-feed-scroller-marquee/) -->
+  <script src="/js/rss-marquee.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const feedUrl = ['https://eldeber.com.bo/rss/feed/santa-cruz',
+        'https://eldeber.com.bo/rss/feed/pais'
+      ];
+
+      const elementSelector = document.getElementById('marquee');
+
+      new RSSMarquee(feedUrl, elementSelector, {
+        speed: 20,
+        maxItems: 10
+      });
+    });
+
+    //temporizador on/off
+    $('document').ready(function () {
+
+      $('#marquee').hide();
+
+      window.setTimeout(
+        function () {
+          $('#marquee').show();
+          setInterval(function () { $('#marquee').toggle(); }, 64000);
+        }
+        , 1000);
+    });
+  </script>
+
+  <!-- navbar al inferior de la pagina (https://www.w3schools.com/howto/howto_css_bottom_nav.asp) -->
+  <div class="navbar">
+    <!-- marquesina -->
+    <div>
+      <div id="marquee"></div>
+    </div>
+
+    <!-- clima (https://weatherwidget.io/) -->
+    <a class="weatherwidget-io" href="https://forecast7.com/es/n17d81n63d16/santa-cruz-de-la-sierra/"
+      data-label_1="SANTA CRUZ" data-font="Roboto" data-icons="Climacons Animated" data-days="5" data-theme="pure">SANTA
+      CRUZ</a>
+    <script>
+      !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+  </div>
+
+</body>
+
+</html>
